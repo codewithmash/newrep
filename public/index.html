@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise University - Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <img src="logo-wide.png" alt="Sunrise University Logo" class="logo">
+            </div>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item">
+                        <a href="#dashboard" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                            <i class="fas fa-chevron-left arrow"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#admission" class="nav-link dropdown-toggle">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Admission</span>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#id-card"><i class="fas fa-id-card"></i>ID Card</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#examination" class="nav-link dropdown-toggle">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Examination</span>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#results"><i class="fas fa-chart-bar"></i>Results</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#logout" class="nav-link">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Log out</span>
+                            <i class="fas fa-chevron-left arrow"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-header">
+                <h1 class="university-title">SUNRISE UNIVERSITY, ALWAR</h1>
+                <h2 class="page-title">Dashboard</h2>
+            </div>
+            
+            <div class="content-area">
+                <div class="dashboard-content">
+                    <div class="welcome-message">
+                        <h3>Welcome to Student Portal</h3>
+                        <p>Select an option from the menu to get started.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2021-2024 Sunrise University</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

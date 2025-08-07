@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sunrise University - Student Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .login-container {
+      position: relative;
+      top: 70px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px 50px;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .logo-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .login-heading {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .login-heading h3 {
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+
+    .form-column {
+      flex: 1;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      background: white;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #337ab7;
+      box-shadow: 0 0 0 2px rgba(51, 122, 183, 0.2);
+    }
+
+    .input-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+      font-size: 16px;
+    }
+
+    .login-button {
+      background: #d95459;
+      color: white;
+      border: none;
+      padding: 12px 60px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      height: 42px;
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .login-button:hover {
+      background: #b71c1c;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 30px 20px;
+      }
+
+      .form-row {
+        flex-direction: column;
+      }
+
+      .login-button {
+        min-height: auto;
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="logo-section">
+      <img src="logo1.png" alt="Sunrise University Logo" class="logo" />
+    </div>
+
+    <div class="login-heading">
+      <h3>Student Login</h3>
+    </div>
+
+    <form id="loginForm">
+      <div class="form-row">
+        <div class="form-column">
+          <div class="form-group">
+            <input type="text" class="input-field" id="username" placeholder="Username" required />
+            <i class="fas fa-user input-icon"></i>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="input-field" id="password" placeholder="Password" required />
+            <i class="fas fa-lock input-icon"></i>
+          </div>
+        </div>
+
+        <div class="form-column">
+          <button type="submit" class="login-button">Login</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="footer">
+      © 2021-2022 Sunrise University
+    </div>
+  </div>
+
+  <script>
+    // ✅ Load saved username/password from Local Storage on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      const usernameField = document.getElementById('username');
+      const passwordField = document.getElementById('password');
+
+      const savedUsername = localStorage.getItem('username');
+      const savedPassword = localStorage.getItem('password'); // optional
+
+      if (savedUsername) usernameField.value = savedUsername;
+      if (savedPassword) passwordField.value = savedPassword;
+
+      usernameField.select(); // auto-focus
+    });
+
+    // ✅ Handle form submit and save to Local Storage
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      
+
+
+      if(username=="surj4257" || username=="surj4265" || username=="surj4255"){
+        
+      }
+      else 
+      {
+         alert("user not found");
+        return;
+      }
+
+      
+      if (!username || !password) {
+        alert("Please enter both fields.");
+        return;
+      }
+
+      // Save to local storage
+      localStorage.setItem('username', username);
+      localStorage.setItem('password', password); // remove this line if you don't want to store password
+
+      const loginButton = document.querySelector('.login-button');
+      loginButton.textContent = 'Logging in...';
+      loginButton.disabled = true;
+
+      // Simulate login delay
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1500);
+    }
+    
+  );
+  </script>
+
+</body>
+</html>
